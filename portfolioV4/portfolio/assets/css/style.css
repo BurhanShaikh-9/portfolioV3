@@ -930,7 +930,7 @@ section#card_main {
 }
 
 .all_page {
-    height: 100vh;
+    height: calc(100vh - 24px);
 }
 
 .designer {
