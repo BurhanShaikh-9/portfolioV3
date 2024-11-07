@@ -73,6 +73,10 @@ body {
     background-color: var(--primary-color);
 }
 
+.d_text{
+    color: var(--card-text);
+}
+
 /*-----------------------[ 2.Preloader CSS ]------------------------*/
 #loader-wrapper {
     position: fixed;
