@@ -1473,11 +1473,19 @@ button:hover .shopping_bag {
 }
 
 .content_main1 {
-    display: grid;
+    /* display: grid;
     justify-items: start;
     width: 330px;
-    height: 420px;
+    height: 420px; */
     gap: 30px;
+    display: flex;
+    padding-right: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+.content_main1>div{
+    flex: 1;
+    max-width: 251px;
 }
 
 .content_main2 {
