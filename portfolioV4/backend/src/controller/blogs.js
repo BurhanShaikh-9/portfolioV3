@@ -1,9 +1,11 @@
 const Blog = require("../model/blogs");
+const cloudinary = require('../middleware/cloudinary');
 
-// 1. Create a new blog
+// 1. Create a new blog with image upload
 const createBlog = async (req, res) => {
   try {
-    const newBlog = new Blog(req.body);
+    const image = req.file ? req.file.path : null; // Get Cloudinary image path
+    const newBlog = new Blog({ ...req.body, featuredImage: image });
     const savedBlog = await newBlog.save();
     res.status(201).json(savedBlog);
   } catch (error) {
@@ -32,10 +34,14 @@ const getBlogById = async (req, res) => {
   }
 };
 
-// 4. Update a blog
+// 4. Update a blog with optional image upload
 const updateBlog = async (req, res) => {
   try {
-    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, req.body, {
+    const image = req.file ? req.file.path : undefined; // Get Cloudinary image path if uploaded
+    const updatedData = { ...req.body };
+    if (image) updatedData.featuredImage = image;
+
+    const updatedBlog = await Blog.findByIdAndUpdate(req.params.id, updatedData, {
       new: true,
       runValidators: true,
     });
