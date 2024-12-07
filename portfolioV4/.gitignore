@@ -1,0 +1,61 @@
+# Node.js dependencies
+node_modules/
+ 
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+
+# Editor directories and files
+.idea/
+.vscode/
+*.swp
+
+# Build files
+dist/
+build/
+
+# Temporary files
+*.tmp
+*.temp
+*.pid
+*.seed
+*.pid.lock
+
+# Debugging and profiling
+*.gz
+*.out
+*.trace
+
+# Coverage directories and files
+coverage/
+
+# Other IDE/Editor-specific settings
+*.sublime-workspace
+*.sublime-project
+*.code-workspace
+
+# Optional npm cache directory
+.npm/
+
+# Optional Yarn cache directory
+.pnp/
+.pnp.js
+
+# Compiled files
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Other
+*.lock
